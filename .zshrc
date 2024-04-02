@@ -15,6 +15,7 @@ for KUBECONFIG_FILE in "$KUBECONFIG_HOME"/*; do
 done
 
 alias k="kubectl --insecure-skip-tls-verify"
+alias vim="nvim"
 alias pip="pip3"
 alias python="python3"
 
