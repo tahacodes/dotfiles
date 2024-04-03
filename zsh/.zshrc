@@ -20,17 +20,15 @@ alias pip="pip3"
 alias python="python3"
 
 ##### General configs
+export PATH=$HOME/.bin:/usr/local/sbin:$PATH
 export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 
 ##### oh-my-zsh configs
-export PATH=$HOME/.bin:/usr/local/sbin:$PATH
-
-# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
-COMPLETION_WAITING_DOTS="%F{red}Waiting...%f"
+COMPLETION_WAITING_DOTS="%F{red} Waiting...%f"
 
 plugins=(git golang kubectl)
 
