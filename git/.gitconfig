@@ -1,0 +1,10 @@
+[user]
+	name = Taha Farahani
+	email = tahacodes@proton.me
+	signingkey = 6A6245E2D0837AF5
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
