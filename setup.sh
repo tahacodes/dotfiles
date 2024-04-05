@@ -17,3 +17,13 @@ fi
 if cp kitty/kitty.conf $HOME/.config/kitty/kitty.conf; then
     echo "Copied kitty configs"
 fi
+
+# Git
+if cp git/.gitconfig $HOME/.gitconfig; then
+    echo "Copied git configs"
+fi
+
+# SSH
+if cp ssh/config $HOME/.ssh/config; then
+    echo "Copied ssh configs"
+fi
