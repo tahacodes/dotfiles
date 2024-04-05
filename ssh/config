@@ -1,0 +1,6 @@
+Host *
+	UseKeychain yes
+	AddKeysToAgent yes
+	StrictHostKeyChecking no
+
+Include config.d/*
