@@ -14,6 +14,7 @@ for KUBECONFIG_FILE in "$KUBECONFIG_HOME"/*; do
   fi
 done
 
+alias k-clear="export KUBECONFIG=''"
 alias k="kubectl --insecure-skip-tls-verify"
 alias vim="nvim"
 alias pip="pip3"
