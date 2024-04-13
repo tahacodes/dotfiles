@@ -21,7 +21,11 @@ alias pip="pip3"
 alias python="python3"
 
 ##### General configs
-export PATH=$HOME/.bin:/usr/local/sbin:$PATH
+export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+for binary in $HOME/.bin/*; do
+  PATH="$binary:$PATH"
+done
+
 export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 
