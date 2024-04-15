@@ -19,14 +19,19 @@ alias k="kubectl --insecure-skip-tls-verify"
 alias pip="pip3"
 alias python="python3"
 
-##### General configs
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/go/bin/:$PATH"
-for binary in $HOME/.bin/*; do
-  PATH="$binary:$PATH"
+##### Adding stuff to PATH
+export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$HOME/go/bin"
+
+# Add ~/.bin and any directory inside of it to PATH
+export PATH="$PATH:$HOME/.bin"
+for item in "$HOME/.bin"/*; do
+  if [ -d "$item" ]; then
+    PATH="$PATH:$item"
+  fi
 done
 
+##### General configs
 export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 
@@ -36,6 +41,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="%F{red} Waiting...%f"
 
-plugins=(git golang kubectl)
+plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
