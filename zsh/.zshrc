@@ -20,7 +20,9 @@ alias pip="pip3"
 alias python="python3"
 
 ##### General configs
-export PATH="$HOME/.bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/go/bin/:$PATH"
 for binary in $HOME/.bin/*; do
   PATH="$binary:$PATH"
 done
