@@ -16,7 +16,6 @@ done
 
 alias k-clear="export KUBECONFIG=''"
 alias k="kubectl --insecure-skip-tls-verify"
-alias vim="nvim"
 alias pip="pip3"
 alias python="python3"
 
