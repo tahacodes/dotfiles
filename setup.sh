@@ -8,6 +8,11 @@ if cp tmux/.tmux.conf $HOME/.tmux.conf; then
     echo "Copied tmux configs"
 fi
 
+# vim
+if cp vim/.vimrc $HOME/.vimrc; then
+    echo "Copied vim configs"
+fi
+
 # kitty
 if cp kitty/kitty.conf $HOME/.config/kitty/kitty.conf; then
     echo "Copied kitty configs"
