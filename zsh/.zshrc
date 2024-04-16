@@ -21,7 +21,7 @@ alias python="python3"
 
 ##### Adding stuff to PATH
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.go/bin"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
@@ -34,6 +34,9 @@ done
 ##### General configs
 export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
+
+# Go configs
+export GOPATH="$HOME/.go"
 
 ##### oh-my-zsh configs
 export ZSH="$HOME/.oh-my-zsh"
