@@ -27,3 +27,8 @@ fi
 if cp ssh/config $HOME/.ssh/config; then
     echo "Copied ssh configs"
 fi
+
+# Zed
+if cp -R zed/* $HOME/.config/zed; then
+    echo "Copied zed configs"
+fi
