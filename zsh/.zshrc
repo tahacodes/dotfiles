@@ -10,7 +10,8 @@ fi
 for KUBECONFIG_FILE in "$KUBECONFIG_HOME"/*; do
   if [ -f "$KUBECONFIG_FILE" ]; then
     KUBECONFIG_FILE=$(basename "$KUBECONFIG_FILE")
-    alias k-$KUBECONFIG_FILE="export KUBECONFIG='$KUBECONFIG_HOME/$KUBECONFIG_FILE'"
+    message="KUBECONFIG is now set to $KUBECONFIG_FILE"
+    alias k-$KUBECONFIG_FILE="export KUBECONFIG='$KUBECONFIG_HOME/$KUBECONFIG_FILE'; echo $message"
   fi
 done
 
