@@ -33,6 +33,7 @@ for item in "$HOME/.bin"/*; do
 done
 
 ##### General configs
+export HOMEBREW_NO_AUTO_UPDATE="1"
 export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
 
@@ -48,3 +49,6 @@ COMPLETION_WAITING_DOTS="%F{red} Waiting...%f"
 plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
+
+# Make sure to start the shell with an empty KUBECONFIG
+k-clear
