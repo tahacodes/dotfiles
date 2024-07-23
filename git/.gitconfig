@@ -3,7 +3,7 @@
 	email = tahacodes@proton.me
 	signingkey = 6A6245E2D0837AF5
 [init]
-	defaultBranch = main
+	defaultBranch = master
 [commit]
 	gpgsign = true
 [gpg]
