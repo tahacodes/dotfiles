@@ -1,4 +1,5 @@
 Host *
+	SetEnv TERM=xterm-256color
 	UseKeychain yes
 	AddKeysToAgent yes
 	StrictHostKeyChecking no
