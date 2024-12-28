@@ -1,0 +1,7 @@
+theme = "UltraDark"
+font-size = 16
+
+window-inherit-working-directory = false
+window-inherit-font-size = false
+
+shell-integration = zsh
