@@ -34,12 +34,23 @@ for item in "$HOME/.bin"/*; do
 done
 
 ##### General configs
-export HOMEBREW_NO_AUTO_UPDATE="1"
-export GPG_TTY=$(tty)
 export LANG=en_US.UTF-8
+export GPG_TTY=$(tty)
+export HOMEBREW_NO_AUTO_UPDATE="1"
+
+# SSH configs
+export SSH_SK_PROVIDER=/usr/local/lib/sk-libfido2.dylib
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
+gpgconf --launch gpg-agent
 
 # Go configs
 export GOPATH="$HOME/.go"
+
+# Docker Desktop configs
+fpath=(/Users/taha/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
 
 ##### oh-my-zsh configs
 export ZSH="$HOME/.oh-my-zsh"
@@ -50,6 +61,3 @@ COMPLETION_WAITING_DOTS="%F{red} Waiting...%f"
 plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
-
-# Make sure to start the shell with an empty KUBECONFIG
-k-clear
