@@ -1,7 +1,7 @@
 [user]
 name = Taha Farahani
 email = goodoldtaha@gmail.com
-signingkey = B5E9F00CC613DA97
+signingkey = C613DA97
 
 [init]
 defaultBranch = master
