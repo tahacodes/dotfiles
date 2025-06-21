@@ -17,6 +17,5 @@
   ansible.builtin.copy:
     src: config
     dest: "{{ home_dir }}/.config/ghostty/config"
-    backup: true
     mode: '0644'
   tags: ghostty

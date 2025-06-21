@@ -3,6 +3,5 @@
   ansible.builtin.copy:
     src: .gitconfig
     dest: "{{ home_dir }}/.gitconfig"
-    backup: true
     mode: '0644'
   tags: git

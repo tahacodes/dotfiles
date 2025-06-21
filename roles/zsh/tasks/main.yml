@@ -3,6 +3,5 @@
   ansible.builtin.copy:
     src: .zshrc
     dest: "{{ home_dir }}/.zshrc"
-    backup: true
     mode: '0644'
   tags: zsh

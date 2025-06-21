@@ -3,6 +3,5 @@
   ansible.builtin.copy:
     src: .tmux.conf
     dest: "{{ home_dir }}/.tmux.conf"
-    backup: true
     mode: '0644'
   tags: tmux

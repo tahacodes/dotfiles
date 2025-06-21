@@ -3,6 +3,5 @@
   ansible.builtin.copy:
     src: .vimrc
     dest: "{{ home_dir }}/.vimrc"
-    backup: true
     mode: '0644'
   tags: vim
