@@ -1,6 +1,6 @@
 ---
-- name: Deploy dotfiles
-  hosts: all
+- name: Install dotfiles
+  hosts: localhost
   gather_facts: true
   vars:
     dotfiles_dir: "{{ playbook_dir }}"
@@ -11,7 +11,7 @@
       ansible.builtin.file:
         path: "{{ item }}"
         state: directory
-        mode: '0755'
+        mode: "0755"
       loop:
         - "{{ home_dir }}/.config"
 
@@ -26,4 +26,4 @@
   post_tasks:
     - name: Display completion message
       ansible.builtin.debug:
-        msg: "Dotfiles have been successfully deployed to {{ home_dir }}"
+        msg: "Dotfiles have been successfully installed to {{ home_dir }}"
