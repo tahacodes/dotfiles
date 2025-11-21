@@ -24,6 +24,7 @@ alias python="python3"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/.go/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
@@ -37,11 +38,11 @@ done
 export LANG=en_US.UTF-8
 export GPG_TTY=$(tty)
 export HOMEBREW_NO_AUTO_UPDATE="1"
+ulimit -n 65536
 
 # SSH configs
 export SSH_SK_PROVIDER=/usr/local/lib/sk-libfido2.dylib
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-
 gpgconf --launch gpg-agent
 
 # Go configs
