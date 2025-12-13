@@ -1,6 +1,5 @@
 Host *
 	SetEnv TERM=xterm-256color
-	IdentityFile ~/.ssh/id_personal
 	StrictHostKeyChecking no
 
 	UseKeychain yes

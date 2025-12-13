@@ -1,4 +1,4 @@
 Host github.com
-    Hostname github.com
-    User git
-    ProxyCommand nc -X 5 -x 127.0.0.1:10808 %h %p
+	Hostname github.com
+	User git
+	ProxyCommand nc -X 5 -x 127.0.0.1:10808 %h %p
