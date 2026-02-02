@@ -24,7 +24,6 @@ alias python="python3"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/.go/bin"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="$PATH:$HOME/.antigravity/antigravity/bin"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
@@ -37,8 +36,13 @@ done
 ##### General configs
 export LANG=en_US.UTF-8
 export GPG_TTY=$(tty)
-export HOMEBREW_NO_AUTO_UPDATE="1"
 ulimit -n 65536
+
+# Homebrew
+export HOMEBREW_NO_AUTO_UPDATE="1"
+# export PATH="/opt/homebrew/bin:$PATH"
+# export PATH="/opt/homebrew/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 # SSH configs
 export SSH_SK_PROVIDER=/usr/local/lib/sk-libfido2.dylib
