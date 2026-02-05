@@ -22,8 +22,9 @@ alias python="python3"
 
 ##### Adding stuff to PATH
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.go/bin"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
