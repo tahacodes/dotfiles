@@ -1,5 +1,5 @@
 theme = "Ultra Dark"
-font-size = 16
+font-size = 15
 
 window-inherit-working-directory = false
 window-inherit-font-size = false

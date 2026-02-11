@@ -1,6 +1,6 @@
 ---
 - name: Install dotfiles
-  hosts: localhost
+  hosts: all
   gather_facts: true
   vars:
     dotfiles_dir: "{{ playbook_dir }}"
