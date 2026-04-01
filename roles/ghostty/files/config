@@ -1,9 +1,0 @@
-theme = "Ultra Dark"
-font-size = 15
-
-window-inherit-working-directory = false
-window-inherit-font-size = false
-
-shell-integration = zsh
-
-split-divider-color = "#4a4a4a"

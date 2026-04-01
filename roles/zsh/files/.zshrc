@@ -22,10 +22,11 @@ alias python="python3"
 
 ##### Adding stuff to PATH
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.go/bin"
-export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
-export PATH="$PATH:/opt/homebrew/opt/helm@3/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.go/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/opt/homebrew/opt/helm@3/bin:$PATH"
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
@@ -42,8 +43,8 @@ ulimit -n 65536
 
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE="1"
-# export PATH="/opt/homebrew/bin:$PATH"
-# export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 # SSH configs

@@ -1,0 +1,10 @@
+shell-integration = zsh
+
+split-divider-color = "#4a4a4a"
+theme = "Ultra Dark"
+font-size = 15
+
+window-inherit-font-size = false
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+tab-inherit-working-directory = false

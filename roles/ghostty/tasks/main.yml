@@ -15,7 +15,7 @@
 
 - name: Copy ghostty configuration
   ansible.builtin.copy:
-    src: config
-    dest: "{{ home_dir }}/.config/ghostty/config"
+    src: config.ghostty
+    dest: "{{ home_dir }}/.config/ghostty/config.ghostty"
     mode: '0644'
   tags: ghostty
