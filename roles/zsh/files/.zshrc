@@ -24,9 +24,12 @@ alias python="python3"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.go/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/helm@3/bin:$PATH"
 export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
