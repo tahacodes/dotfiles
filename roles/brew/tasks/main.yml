@@ -1,0 +1,32 @@
+---
+- name: Check if homebrew is installed
+  ansible.builtin.stat:
+    path: "{{ brew_prefix }}/bin/brew"
+  register: brew_binary
+  tags: brew
+
+- name: Install homebrew
+  ansible.builtin.shell: |
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  changed_when: true
+  when: not brew_binary.stat.exists
+  tags: brew
+
+- name: Tap repositories
+  community.general.homebrew_tap:
+    name: "{{ brew_taps }}"
+    path: "{{ brew_prefix }}/bin"
+  tags: brew
+
+- name: Install formulae
+  community.general.homebrew:
+    name: "{{ brew_formulae }}"
+    state: present
+    path: "{{ brew_prefix }}/bin"
+  tags: brew
+
+- name: Install App Store apps
+  community.general.mas:
+    id: "{{ brew_mas_apps | map(attribute='id') | list }}"
+    state: present
+  tags: brew

@@ -1,0 +1,68 @@
+---
+brew_prefix: /opt/homebrew
+
+brew_taps:
+  - hashicorp/tap
+
+brew_formulae:
+  - ansible
+  - ansible-lint
+  - automake
+  - aws-nuke
+  - awscli
+  - curl
+  - doctl
+  - fd
+  - gh
+  - glab
+  - go
+  - hashicorp/tap/terraform
+  - helm@3
+  - htop
+  - iperf3
+  - iproute2mac
+  - kubernetes-cli
+  - kubeseal
+  - libpq
+  - libtool
+  - mas
+  - minio-mc
+  - mtr
+  - mysql-client
+  - nload
+  - node
+  - openbao
+  - openconnect
+  - openjdk
+  - openvpn
+  - pinentry-mac
+  - pipx
+  - pkgconf
+  - poppler
+  - putty
+  - pwgen
+  - python-tk@3.14
+  - python@3.13
+  - ripgrep
+  - rsync
+  - swag
+  - telnet
+  - tmux
+  - uv
+  - virtctl
+  - watch
+  - wgcf
+  - wget
+  - wireguard-tools
+  - xray
+  - yq
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+
+brew_mas_apps:
+  - { id: 595191960, name: CopyClip }
+  - { id: 361285480, name: Keynote }
+  - { id: 361304891, name: Numbers }
+  - { id: 361309726, name: Pages }
+  - { id: 1171425651, name: Roozegar }
+  - { id: 1451685025, name: WireGuard }
