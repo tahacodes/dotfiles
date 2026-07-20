@@ -1,0 +1,7 @@
+---
+macos_defaults:
+  - { domain: NSGlobalDomain, key: KeyRepeat, type: float, value: 2.0 }
+  - { domain: NSGlobalDomain, key: InitialKeyRepeat, type: float, value: 15.0 }
+  - { domain: NSGlobalDomain, key: AppleShowAllExtensions, type: bool, value: true }
+  - { domain: com.apple.dock, key: autohide, type: bool, value: true }
+  - { domain: com.apple.finder, key: FXPreferredViewStyle, type: string, value: Nlsv }
