@@ -1,0 +1,34 @@
+---
+- name: Upgrade everything!
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Update homebrew
+      ansible.builtin.command: /opt/homebrew/bin/brew update
+      register: brew_update
+      changed_when: "'Already up-to-date' not in brew_update.stdout"
+
+    - name: Upgrade all homebrew packages (greedy)
+      ansible.builtin.command: /opt/homebrew/bin/brew upgrade --greedy
+      register: brew_upgrade
+      changed_when: brew_upgrade.stdout | length > 0
+
+    - name: Remove unused homebrew dependencies
+      ansible.builtin.command: /opt/homebrew/bin/brew autoremove
+      register: brew_autoremove
+      changed_when: brew_autoremove.stdout | length > 0
+
+    - name: Clean up homebrew
+      ansible.builtin.command: /opt/homebrew/bin/brew cleanup
+      register: brew_cleanup
+      changed_when: brew_cleanup.stdout | length > 0
+
+    - name: List available macOS software updates
+      ansible.builtin.command: softwareupdate -l
+      register: macos_updates
+      changed_when: false
+
+    - name: Show available macOS updates
+      ansible.builtin.debug:
+        msg: "{{ macos_updates.stderr_lines + macos_updates.stdout_lines }}"
