@@ -16,7 +16,6 @@ for KUBECONFIG_FILE in "$KUBECONFIG_HOME"/*; do
 done
 
 alias k-clear="export KUBECONFIG=''"
-alias k="kubectl --insecure-skip-tls-verify"
 alias pip="pip3"
 alias python="python3"
 
@@ -46,8 +45,6 @@ ulimit -n 65536
 
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE="1"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 # SSH configs
@@ -58,10 +55,8 @@ gpgconf --launch gpg-agent
 # Go configs
 export GOPATH="$HOME/.go"
 
-# Docker Desktop configs
+# Docker Desktop completions (compinit runs inside oh-my-zsh)
 fpath=(/Users/taha/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
 
 ##### oh-my-zsh configs
 export ZSH="$HOME/.oh-my-zsh"
@@ -72,3 +67,15 @@ COMPLETION_WAITING_DOTS="%F{red} Waiting...%f"
 plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
+
+# History: keep everything, never trim or dedupe
+HISTSIZE=1000000
+SAVEHIST=1000000
+unsetopt hist_expire_dups_first hist_ignore_dups hist_ignore_space
+
+# opencode
+export PATH=/Users/taha/.opencode/bin:$PATH
+
+# Plugins from brew (syntax-highlighting must stay last)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

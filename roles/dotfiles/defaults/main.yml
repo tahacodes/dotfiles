@@ -1,0 +1,26 @@
+---
+dotfiles_dirs:
+  - path: "{{ home_dir }}/.config/ghostty"
+    mode: "0755"
+  - path: "{{ home_dir }}/.ssh"
+    mode: "0700"
+  - path: "{{ home_dir }}/.ssh/config.d"
+    mode: "0700"
+  - path: "{{ home_dir }}/.vim/undo"
+    mode: "0755"
+
+dotfiles_links:
+  - src: zsh/.zshrc
+    dest: "{{ home_dir }}/.zshrc"
+  - src: git/.gitconfig
+    dest: "{{ home_dir }}/.gitconfig"
+  - src: vim/.vimrc
+    dest: "{{ home_dir }}/.vimrc"
+  - src: tmux/.tmux.conf
+    dest: "{{ home_dir }}/.tmux.conf"
+  - src: ghostty/config.ghostty
+    dest: "{{ home_dir }}/.config/ghostty/config.ghostty"
+  - src: ssh/config
+    dest: "{{ home_dir }}/.ssh/config"
+  - src: ssh/config.d/generic
+    dest: "{{ home_dir }}/.ssh/config.d/generic"

@@ -14,3 +14,17 @@ program = gpg
 
 [push]
 autoSetupRemote = true
+
+[pull]
+rebase = true
+
+[fetch]
+prune = true
+
+[rerere]
+enabled = true
+
+[branch]
+sort = -committerdate
+[url "git@git.cloudyfolks.com:"]
+	insteadOf = https://git.cloudyfolks.com/

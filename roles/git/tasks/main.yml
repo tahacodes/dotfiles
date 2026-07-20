@@ -1,7 +1,0 @@
----
-- name: Copy git configuration
-  ansible.builtin.copy:
-    src: .gitconfig
-    dest: "{{ home_dir }}/.gitconfig"
-    mode: '0644'
-  tags: git

@@ -7,6 +7,12 @@ set ruler
 set showcmd
 set wildmenu
 set backspace=indent,eol,start
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set undofile
+set undodir=~/.vim/undo//
 
 " From `:help :DiffOrig`.
 if exists(":DiffOrig") != 2

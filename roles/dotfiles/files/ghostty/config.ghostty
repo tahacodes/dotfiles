@@ -8,4 +8,3 @@ fullscreen = true
 window-inherit-font-size = false
 window-inherit-working-directory = false
 tab-inherit-working-directory = false
-tab-inherit-working-directory = false

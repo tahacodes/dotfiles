@@ -1,0 +1,24 @@
+---
+- name: Ensure config directories exist
+  ansible.builtin.file:
+    path: "{{ item.path }}"
+    state: directory
+    mode: "{{ item.mode }}"
+  loop: "{{ dotfiles_dirs }}"
+  tags: dotfiles
+
+- name: Symlink dotfiles into home
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+    force: true
+  loop: "{{ dotfiles_links }}"
+  tags: dotfiles
+
+- name: Remove ghostty application support directory
+  ansible.builtin.file:
+    path: "{{ home_dir }}/Library/Application Support/com.mitchellh.ghostty"
+    state: absent
+  when: ansible_system == "Darwin"
+  tags: dotfiles
