@@ -24,11 +24,12 @@
       register: brew_cleanup
       changed_when: brew_cleanup.stdout | length > 0
 
-    - name: List available macOS software updates
+    - name: Check updates for macos
       ansible.builtin.command: softwareupdate -l
       register: macos_updates
       changed_when: false
 
     - name: Show available macOS updates
       ansible.builtin.debug:
-        msg: "{{ macos_updates.stderr_lines + macos_updates.stdout_lines }}"
+        msg: "{{ (macos_updates.stderr_lines + macos_updates.stdout_lines) | select | list }}"
+      when: "'No new software available' not in macos_updates.stderr"
