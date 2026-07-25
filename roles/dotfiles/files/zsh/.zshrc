@@ -30,6 +30,12 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
+# mimocode
+export PATH=/Users/taha/.mimocode/bin:$PATH
+
+# opencode
+export PATH=/Users/taha/.opencode/bin:$PATH
+
 # Add ~/.bin and any directory inside of it to PATH
 export PATH="$PATH:$HOME/.bin"
 for item in "$HOME/.bin"/*; do
@@ -72,9 +78,6 @@ source $ZSH/oh-my-zsh.sh
 HISTSIZE=1000000
 SAVEHIST=1000000
 unsetopt hist_expire_dups_first hist_ignore_dups hist_ignore_space
-
-# opencode
-export PATH=/Users/taha/.opencode/bin:$PATH
 
 # Plugins from brew (syntax-highlighting must stay last)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
