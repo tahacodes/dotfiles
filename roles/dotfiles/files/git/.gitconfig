@@ -1,7 +1,7 @@
 [user]
 name = Taha Farahani
-email = tahacodes@proton.me
-signingkey = 6695E8638EDB1D57
+email = tahaisworking@gmail.com
+signingkey = C96BE1E772AAB912C6181D46C4185415A62D23FD
 
 [init]
 defaultBranch = master
@@ -26,5 +26,9 @@ enabled = true
 
 [branch]
 sort = -committerdate
+
 [url "git@git.cloudyfolks.com:"]
 	insteadOf = https://git.cloudyfolks.com/
+
+[tag]
+gpgsign = true
