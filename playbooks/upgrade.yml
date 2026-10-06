@@ -3,16 +3,28 @@
   hosts: all
   gather_facts: false
 
+  vars:
+    brew_self_upgrade_excluded:
+      - ansible
+      - python@3.13
+
   tasks:
     - name: Update homebrew
       ansible.builtin.command: /opt/homebrew/bin/brew update
       register: brew_update
       changed_when: "'Already up-to-date' not in brew_update.stdout"
 
-    - name: Upgrade all homebrew packages (greedy)
-      ansible.builtin.command: /opt/homebrew/bin/brew upgrade --greedy
-      register: brew_upgrade
-      changed_when: brew_upgrade.stdout | length > 0
+    - name: Find outdated homebrew packages
+      ansible.builtin.command: /opt/homebrew/bin/brew outdated --quiet --greedy
+      register: brew_outdated
+      changed_when: false
+
+    - name: Upgrade outdated homebrew packages (greedy)
+      ansible.builtin.command: >-
+        /opt/homebrew/bin/brew upgrade --greedy
+        {{ brew_outdated.stdout_lines | difference(brew_self_upgrade_excluded) | join(' ') }}
+      when: brew_outdated.stdout_lines | difference(brew_self_upgrade_excluded) | length > 0
+      changed_when: true
 
     - name: Remove unused homebrew dependencies
       ansible.builtin.command: /opt/homebrew/bin/brew autoremove
@@ -23,6 +35,13 @@
       ansible.builtin.command: /opt/homebrew/bin/brew cleanup
       register: brew_cleanup
       changed_when: brew_cleanup.stdout | length > 0
+
+    - name: Show packages to upgrade outside ansible
+      ansible.builtin.debug:
+        msg: >-
+          Run manually: brew upgrade
+          {{ brew_outdated.stdout_lines | intersect(brew_self_upgrade_excluded) | join(' ') }}
+      when: brew_outdated.stdout_lines | intersect(brew_self_upgrade_excluded) | length > 0
 
     - name: Check updates for macos
       ansible.builtin.command: softwareupdate -l
