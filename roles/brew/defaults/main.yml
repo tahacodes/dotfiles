@@ -5,59 +5,71 @@ brew_taps:
   - hashicorp/tap
 
 brew_formulae:
-  - ansible
-  - ansible-lint
-  - automake
-  - aws-nuke
-  - awscli
-  - curl
-  - doctl
-  - fd
-  - gh
-  - glab
-  - go
-  - hashicorp/tap/terraform
-  - helm@3
-  - htop
-  - iperf3
-  - iproute2mac
-  - kubernetes-cli
-  - kubeseal
-  - libpq
-  - libtool
-  - mas
-  - minio-mc
-  - mtr
-  - mysql-client
-  - nload
-  - node
-  - openbao
-  - openconnect
-  - openjdk
-  - openvpn
-  - pinentry-mac
-  - pipx
-  - pkgconf
-  - poppler
-  - putty
-  - pwgen
-  - python-tk@3.14
-  - python@3.13
-  - ripgrep
-  - rsync
-  - swag
-  - telnet
+  - claude-code@latest
+
   - tmux
-  - uv
-  - virtctl
-  - watch
-  - wgcf
-  - wget
-  - wireguard-tools
-  - xray
-  - yq
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+
+  - fd
+  - yq
+  - mas
+  - htop
+  - pwgen
+  - watch
+  - poppler
+  - ripgrep
+  - pinentry-mac
+
+  - go
+  - uv
+  - zig
+  - node
+  - pipx
+  - swag
+  - libtool
+  - openjdk
+  - pkgconf
+  - automake
+  - python
+  - python-tk
+
+  - ansible
+  - ansible-lint
+
+  - gh
+  - git
+  - glab
+
+  - doctl
+  - awscli
+  - openbao
+  - aws-nuke
+  - hashicorp/tap/terraform
+
+  - helm@3
+  - virtctl
+  - kubeseal
+  - kubernetes-cli
+
+  - libpq
+  - minio-mc
+  - mysql-client
+
+  - mtr
+  - curl
+  - wgcf
+  - wget
+  - xray
+  - nload
+  - putty
+  - rsync
+  - iperf3
+  - telnet
+  - openvpn
+  - iproute2mac
+  - openconnect
+  - wireguard-tools
 
 brew_mas_apps:
   - { id: 595191960, name: CopyClip }
